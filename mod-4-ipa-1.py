@@ -79,13 +79,13 @@ def tic_tac_toe(board):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-        length = len(board)
-        horizontal = [x for x in board]
-        vertical = [x for x in zip(*board)]
-        ul_lr = [board[i][i] for i in range(length)]
-        ll_ur = [board[length-1-i][i] for i in range(length)]
+    length = len(board)
+    horizontal = [x for x in board]
+    vertical = [x for x in zip(*board)]
+    ul_lr = [board[i][i] for i in range(length)]
+    ll_ur = [board[length-1-i][i] for i in range(length)]
 
-        if length == 3:
+    if length == 3:
             if ['O','O','O'] in horizontal:
                 return 'O'
             elif ['X','X','X'] in horizontal:
@@ -107,7 +107,7 @@ def tic_tac_toe(board):
                             return 'X'
                         else:
                             return 'NO WINNER'                  
-        elif length == 4:
+    elif length == 4:
             if ['O','O','O','O'] in horizontal:
                 return 'O'
             elif ['X','X','X','X'] in horizontal:
@@ -129,7 +129,7 @@ def tic_tac_toe(board):
                             return 'X'
                         else:
                             return 'NO WINNER'
-        elif length == 5:
+    elif length == 5:
             if ['O','O','O','O','O'] in horizontal:
                 return 'O'
             elif ['X','X','X','X','X'] in horizontal:
@@ -151,7 +151,7 @@ def tic_tac_toe(board):
                             return 'X'
                         else:
                             return 'NO WINNER'
-        elif length == 6:
+    elif length == 6:
             if ['O','O','O','O','O','O'] in horizontal:
                 return 'O'
             elif ['X','X','X','X','X','X'] in horizontal:
@@ -173,7 +173,7 @@ def tic_tac_toe(board):
                             return 'X'
                         else:
                             return 'NO WINNER'
-        else:
+    else:
             return 'invalid'
 
 def eta(first_stop, second_stop, route_map):
@@ -219,3 +219,5 @@ def eta(first_stop, second_stop, route_map):
     destination.append(route_map.keys)
     
     print(route_map)
+
+    #i still have to resubmit this one because i have no idea how to execute my plan but if i understand this correctly i have to match the first_stop and second_stop string with the route_map key to retrieve the travel time and return that.
