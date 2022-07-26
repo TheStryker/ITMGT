@@ -49,9 +49,12 @@ def shift_letter(letter, shift):
     result = ""
     for i in range(len(letter)):
         char = letter[i]
+        
+        if(letter == " "):
+            result == " "
 
         # Encrypt uppercase characters
-        if (char.isupper()):
+        elif (char.isupper()):
             result += chr((ord(char) + shift-65) % 26 + 65)
   
         # Encrypt lowercase characters
@@ -83,11 +86,22 @@ def caesar_cipher(message, shift):
 
     #wait i can just use the code from before but now i have to decipher the code to determine why the one on top works.
 
-    answer = ""
-    for letter in message:
-        new=ord(letter)+ offset
-        answer=answer+chr(new)
-    return(answer)
+    result = ""
+    for i in range(len(message)):
+        char = message[i]
+        
+        if char == " ":
+            result += " "
+
+        # Encrypt uppercase characters
+        if (char.isupper()):
+            result += chr((ord(char) + shift-65) % 26 + 65)
+  
+        # Encrypt lowercase characters
+        else:
+            result += chr((ord(char) + shift - 97) % 26 + 97)
+  
+    return result
 
 def shift_by_letter(letter, letter_shift):
     '''Shift By Letter. 
@@ -118,6 +132,7 @@ def shift_by_letter(letter, letter_shift):
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
     # just do the shift letter but find a way to translate a letter to a number.
+ 
  
     s = ""
     lettertoshift = letter_shift.lower()
