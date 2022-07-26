@@ -47,14 +47,18 @@ def shift_letter(letter, shift):
     #s is there to change the variable of a so that it becomes the new letter.
     #the else is there to return the value if it's not a letter so "?" just becomes "?"
 
-    s = ""
-    for l in letter:
-        if l.isalpha():
-            a = ord(l) + shift
-            s += chr(a)
-        else: 
-            s += l
-    return s
+    for i in range(len(letter)):
+        char = letter[i]
+
+        # Encrypt uppercase characters
+        if (char.isupper()):
+            result += chr((ord(char) + shift-65) % 26 + 65)
+  
+        # Encrypt lowercase characters
+        else:
+            result += chr((ord(char) + shift - 97) % 26 + 97)
+  
+    return result
 
 def caesar_cipher(message, shift):
     '''Caesar Cipher. 
