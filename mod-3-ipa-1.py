@@ -46,7 +46,7 @@ def shift_letter(letter, shift):
     #it checks if there is a letter or a space. if there is a letter, it retrieves the unicode letter plus the shift, so if A = 1, then A, 0 just retrieves A
     #s is there to change the variable of a so that it becomes the new letter.
     #the else is there to return the value if it's not a letter so "?" just becomes "?"
-
+    result = ""
     for i in range(len(letter)):
         char = letter[i]
 
@@ -83,14 +83,11 @@ def caesar_cipher(message, shift):
 
     #wait i can just use the code from before but now i have to decipher the code to determine why the one on top works.
 
-    s = ""
-    for l in message:
-        if l.isupper():
-            a = ord(l) + shift
-            s += chr(a)
-        else: 
-            s += l
-    return s
+    answer = ""
+    for letter in message:
+        new=ord(letter)+ offset
+        answer=answer+chr(new)
+    return(answer)
 
 def shift_by_letter(letter, letter_shift):
     '''Shift By Letter. 
