@@ -94,7 +94,7 @@ def caesar_cipher(message, shift):
             result += " "
 
         # Encrypt uppercase characters
-        if (char.isupper()):
+        elif (char.isupper()):
             result += chr((ord(char) + shift-65) % 26 + 65)
   
         # Encrypt lowercase characters
